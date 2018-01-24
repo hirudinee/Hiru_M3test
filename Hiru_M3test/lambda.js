@@ -7,7 +7,7 @@ exports.handler = function (event, context, callback) {
 	}).promise()
 		.then(data => {
 			console.log(data); 
-			callback(null, 'Successfully executed ',data);          // successful response
+			callback(null,data);          // successful response
 			/*
 			data = {
 				LocationConstraint: "us-west-2"
@@ -16,7 +16,7 @@ exports.handler = function (event, context, callback) {
 		})
 		.catch(err => {
 			console.log(err, err.stack); // an error occurred
-			callback(null, 'error occured', err);
+			callback(null,err);
 		});
 
 
